@@ -6,7 +6,7 @@ const NavBar = () => {
     const [openDropdown, setOpenDropdown] = useState(null);
 
     const handleDropdownToggle = (dropdownName) => {
-        setOpenDropdown(openDropdown === dropdownName ? null : dropdownName);  
+        setOpenDropdown(openDropdown === dropdownName ? null : dropdownName);
     };
 
     const nav = (
@@ -56,9 +56,21 @@ const NavBar = () => {
             </li>
 
             <li><Link> আন্তর্জাতিক</Link></li>
-            <li><Link>খেলাধুলা</Link></li>
+            <li>
+                <button onClick={() => handleDropdownToggle('kheladula')}>
+                    খেলাধুলা
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-3">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </button>
+                {openDropdown === 'kheladula' && (
+                    <ul className="dropdown-menu absolute bg-white text-black shadow-lg mt-10 z-10">
+                        <li><Link>ক্রিকেট</Link></li>
+                        <li><Link>ফুটবল</Link></li>
+                    </ul>
+                )}
+            </li>
             <li><Link>চাকরি</Link></li>
-            <li><Link>ধর্ম</Link></li>
             <li><Link>লাইফস্টাইল</Link></li>
             <li><Link>বিনোদন</Link></li>
 
@@ -72,6 +84,7 @@ const NavBar = () => {
                 {openDropdown === 'feature' && (
                     <ul className="dropdown-menu absolute bg-white text-black shadow-lg mt-10 z-10">
                         <li><Link>শিক্ষা</Link></li>
+                        <li><Link>ধর্ম</Link></li>
                         <li><Link>সাহিত্য</Link></li>
                         <li><Link>স্বাস্থ্য</Link></li>
                         <li><Link>তথ্যপ্রযুক্তি</Link></li>
