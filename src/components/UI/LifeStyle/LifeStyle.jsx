@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 const LifeStyle = () => {
@@ -40,9 +40,10 @@ const LifeStyle = () => {
             tag: 'লাইফস্টাইল',
         },
     ];
+   
     useEffect(()=>{
         AOS.init();
-       },[])
+    },[])
     return (
         <div className="p-6" data-aos="fade-up">
             <h2 className="text-2xl font-bold mb-4">লাইফস্টাইল</h2>
